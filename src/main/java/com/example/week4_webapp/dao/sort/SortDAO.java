@@ -17,14 +17,14 @@ public class SortDAO {
     PreparedStatement statement;
     ResultSet resultSet;
 
-    public List<OrderCustomer> getBillByAmount(){
+    public List<OrderCustomer> getBillByAmount() {
         List<OrderCustomer> billList = new ArrayList<>();
         String query = "select * from Bill order by quantity_buy desc";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 billList.add(new OrderCustomer(
                         resultSet.getInt(1),
                         resultSet.getString(2),
@@ -40,14 +40,14 @@ public class SortDAO {
         return billList;
     }
 
-    public List<OrderCustomer> getBillByName(){
+    public List<OrderCustomer> getBillByName() {
         List<OrderCustomer> billList = new ArrayList<>();
         String query = "select * from Bill order by name_kh desc";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 billList.add(new OrderCustomer(
                         resultSet.getInt(1),
                         resultSet.getString(2),

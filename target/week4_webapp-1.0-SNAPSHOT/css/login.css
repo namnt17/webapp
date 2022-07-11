@@ -1,5 +1,5 @@
 /* Bordered form */
-.card{
+.card {
     margin: 120px 0 0 450px;
 }
 
@@ -52,7 +52,8 @@ img.avatar {
 span.psw {
     padding-top: 16px;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -62,6 +63,7 @@ a{
         display: block;
         float: none;
     }
+
     .cancelbtn {
         width: 100%;
     }

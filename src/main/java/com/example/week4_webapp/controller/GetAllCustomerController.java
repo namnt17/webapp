@@ -23,14 +23,14 @@ public class GetAllCustomerController extends HttpServlet {
         resp.setContentType("text/html");
         HttpSession session = req.getSession();
         AddOrderForCustomerDAO listCustomer = new AddOrderForCustomerDAO();
-        List<Customer> customerList =  listCustomer.getAllCustomer();
-        req.setAttribute("listCustomer",customerList);
+        List<Customer> customerList = listCustomer.getAllCustomer();
+        req.setAttribute("listCustomer", customerList);
         session.removeAttribute("cart_list");
-        req.getRequestDispatcher("addOrderForCustomer.jsp").forward(req,resp);
+        req.getRequestDispatcher("addOrderForCustomer.jsp").forward(req, resp);
     }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req,resp);
+        doPost(req, resp);
     }
 }

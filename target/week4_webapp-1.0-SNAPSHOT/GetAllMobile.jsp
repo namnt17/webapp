@@ -4,15 +4,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <title>Edit Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+            crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
 
@@ -31,7 +32,8 @@
                             All Mobile Products
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="showCart" style="text-decoration: none">Cart<span class="badge" style="color: red">${cart_list.size()}</span></a>
+                            <a href="showCart" style="text-decoration: none">Cart<span class="badge"
+                                                                                       style="color: red">${cart_list.size()}</span></a>
                         </div>
                     </div>
                     <div class="row gx-4 gx-lg-5">
@@ -43,7 +45,8 @@
                                         <p class="card-text">${o.model}</p>
                                         <p class="card-text">${o.price}$</p>
                                     </div>
-                                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="AddToCart?pid=${o.id}">Add to Cart</a></div>
+                                    <div class="card-footer"><a class="btn btn-primary btn-sm"
+                                                                href="AddToCart?pid=${o.id}">Add to Cart</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -60,7 +63,8 @@
                                         </a>
                                     </li>
                                     <c:forEach begin="1" end="${endPage}" var="i">
-                                        <li class="page-item"><a class="page-link" href="search?index=${i}">${i}</a></li>
+                                        <li class="page-item"><a class="page-link" href="search?index=${i}">${i}</a>
+                                        </li>
                                     </c:forEach>
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Next">

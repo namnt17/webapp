@@ -13,14 +13,14 @@ public class InsertCustomerDAO {
     PreparedStatement statement;
 
 
-    public void addNewCustomer(Customer customer){
+    public void addNewCustomer(Customer customer) {
         String query = "insert into Customer values(?,?,?)";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
-            statement.setString(1,customer.getName());
-            statement.setString(2,customer.getAddress());
-            statement.setString(3,customer.getGroup());
+            statement.setString(1, customer.getName());
+            statement.setString(2, customer.getAddress());
+            statement.setString(3, customer.getGroup());
             statement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

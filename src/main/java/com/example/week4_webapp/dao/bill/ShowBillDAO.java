@@ -14,14 +14,14 @@ public class ShowBillDAO {
     PreparedStatement statement;
     ResultSet resultSet;
 
-    public List<OrderCustomer> getAllBill(){
+    public List<OrderCustomer> getAllBill() {
         List<OrderCustomer> billList = new ArrayList<>();
         String query = "select * from Bill";
-        try{
+        try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 billList.add(new OrderCustomer(
                         resultSet.getInt(1),
                         resultSet.getString(2),

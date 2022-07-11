@@ -22,19 +22,19 @@ public class GetAllMobileController extends HttpServlet {
         int count = listMobile.count();
         int pageSize = 3;
         int endPage = 0;
-        if(count % pageSize != 0){
-            endPage ++;
+        if (count % pageSize != 0) {
+            endPage++;
         }
-        req.setAttribute("listMobile",mobileList);
-        req.setAttribute("endPage",endPage);
+        req.setAttribute("listMobile", mobileList);
+        req.setAttribute("endPage", endPage);
         HttpSession session = req.getSession();
         int cid = Integer.parseInt(req.getParameter("id"));
-        session.setAttribute("cid",cid);
-        req.getRequestDispatcher("GetAllMobile.jsp").forward(req,resp);
+        session.setAttribute("cid", cid);
+        req.getRequestDispatcher("GetAllMobile.jsp").forward(req, resp);
     }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req,resp);
+        doPost(req, resp);
     }
 }

@@ -1,6 +1,6 @@
 package com.example.week4_webapp.model;
 
-public class Cart extends Mobile{
+public class Cart extends Mobile {
     private int quantity;
 
     public Cart() {

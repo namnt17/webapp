@@ -19,29 +19,29 @@ public class ChangeQuantityController extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
 
         ArrayList<Cart> cart_list = (ArrayList<Cart>) req.getSession().getAttribute("cart_list");
-        if(action != null && id >=1){
-            if(action.equals("inc")){
-                for (Cart item: cart_list){
-                    if(item.getId() == id){
+        if (action != null && id >= 1) {
+            if (action.equals("inc")) {
+                for (Cart item : cart_list) {
+                    if (item.getId() == id) {
                         int quantity = item.getQuantity();
-                        quantity ++;
+                        quantity++;
                         item.setQuantity(quantity);
                         resp.sendRedirect("showCart");
                     }
                 }
             }
-            if(action.equals("dec")){
-                for (Cart item: cart_list){
-                    if(item.getId() == id && item.getQuantity() > 1){
+            if (action.equals("dec")) {
+                for (Cart item : cart_list) {
+                    if (item.getId() == id && item.getQuantity() > 1) {
                         int quantity = item.getQuantity();
-                        quantity --;
+                        quantity--;
                         item.setQuantity(quantity);
                         break;
                     }
                 }
                 resp.sendRedirect("showCart");
             }
-        }else{
+        } else {
             resp.sendRedirect("showCart");
         }
     }

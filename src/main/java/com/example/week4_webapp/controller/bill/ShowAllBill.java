@@ -17,8 +17,8 @@ public class ShowAllBill extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ShowBillDAO listAllBill = new ShowBillDAO();
         List<OrderCustomer> listBill = listAllBill.getAllBill();
-        req.setAttribute("listAllBill",listBill);
-        req.getRequestDispatcher("showAllBill.jsp").forward(req,resp);
+        req.setAttribute("listAllBill", listBill);
+        req.getRequestDispatcher("showAllBill.jsp").forward(req, resp);
 
     }
 }

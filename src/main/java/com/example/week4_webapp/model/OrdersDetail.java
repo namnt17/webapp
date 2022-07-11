@@ -1,15 +1,16 @@
 package com.example.week4_webapp.model;
 
-public class OrdersDetail extends Mobile{
+public class OrdersDetail extends Mobile {
     private int orderId;
     private int uid;
     private int quantity;
     private int bid;
+
     public OrdersDetail() {
 
     }
 
-    public OrdersDetail(int orderId, int uid, int quantity,int bid) {
+    public OrdersDetail(int orderId, int uid, int quantity, int bid) {
         super();
         this.orderId = orderId;
         this.uid = uid;

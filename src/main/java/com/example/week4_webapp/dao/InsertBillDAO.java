@@ -12,16 +12,16 @@ public class InsertBillDAO {
     PreparedStatement statement;
     ResultSet resultSet;
 
-    public void insertBill(Bill bill){
+    public void insertBill(Bill bill) {
         String query = "insert into Bill values (?,?,?,?,?)";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
-            statement.setString(1,bill.getCustomer().getName());
-            statement.setString(2,bill.getCustomer().getAddress());
-            statement.setString(3,bill.getCustomer().getGroup());
-            statement.setInt(4,bill.getListCart().size());
-            statement.setDouble(5,bill.getTotal());
+            statement.setString(1, bill.getCustomer().getName());
+            statement.setString(2, bill.getCustomer().getAddress());
+            statement.setString(3, bill.getCustomer().getGroup());
+            statement.setInt(4, bill.getListCart().size());
+            statement.setDouble(5, bill.getTotal());
             statement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

@@ -15,18 +15,18 @@ public class RemoveFromCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
-        if(id != null){
+        if (id != null) {
             ArrayList<Cart> cart_list = (ArrayList<Cart>) req.getSession().getAttribute("cart_list");
-            if(cart_list != null){
-                for(Cart items: cart_list){
-                    if(items.getId() == Integer.parseInt(id)){
+            if (cart_list != null) {
+                for (Cart items : cart_list) {
+                    if (items.getId() == Integer.parseInt(id)) {
                         cart_list.remove(cart_list.indexOf(items));
                         break;
                     }
                 }
                 resp.sendRedirect("showCart");
             }
-        }else {
+        } else {
             resp.sendRedirect("showCart");
         }
     }

@@ -47,7 +47,7 @@ public class ShowCartController extends HttpServlet {
             req.setAttribute("cart_list", cartProduct);
             req.setAttribute("total", totalPrice);
             req.getRequestDispatcher("cart.jsp").forward(req, resp);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

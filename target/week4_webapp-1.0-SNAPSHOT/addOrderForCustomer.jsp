@@ -34,7 +34,7 @@
                         Add Order For Customer Forms
                     </div>
                     <div class="card-body">
-                        <table  class="table table-striped">
+                        <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th>Mã KH</th>
@@ -51,7 +51,9 @@
                                     <td>${c.name}</td>
                                     <td>${c.address}</td>
                                     <td>${c.group}</td>
-                                    <td><a href="getAllMobile?id=${c.id}"><button class="btn btn-warning">Mua Hàng</button></a></td>
+                                    <td><a href="getAllMobile?id=${c.id}">
+                                        <button class="btn btn-warning">Mua Hàng</button>
+                                    </a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

@@ -40,8 +40,8 @@ public class SaveOrderOfCustomer extends HttpServlet {
             InsertBillDAO insertBillDAO = new InsertBillDAO();
             insertBillDAO.insertBill(bill);
 
-            if(cartList != null && customer != null){
-                for(Cart c: cartList){
+            if (cartList != null && customer != null) {
+                for (Cart c : cartList) {
                     // create OrderDetail Object
                     OrdersDetail ordersDetail = new OrdersDetail();
                     ordersDetail.setId(c.getId());
@@ -58,7 +58,7 @@ public class SaveOrderOfCustomer extends HttpServlet {
             }
             resp.sendRedirect("listCustomer");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

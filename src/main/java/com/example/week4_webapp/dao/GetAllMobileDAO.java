@@ -15,14 +15,14 @@ public class GetAllMobileDAO {
     PreparedStatement statement;
     ResultSet resultSet;
 
-    public List<Mobile> getAllMobile(){
+    public List<Mobile> getAllMobile() {
         List<Mobile> list = new ArrayList<>();
         String query = "SELECT * FROM Mobile";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 list.add(new Mobile(
                         resultSet.getInt(1),
                         resultSet.getString(2),
@@ -36,13 +36,13 @@ public class GetAllMobileDAO {
         return list;
     }
 
-    public int count(){
+    public int count() {
         String query = "select count(*) from Mobile";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 resultSet.getInt(1);
             }
         } catch (Exception e) {

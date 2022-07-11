@@ -15,20 +15,20 @@ public class AddOrderForCustomerDAO {
     PreparedStatement statement;
     ResultSet resultSet;
 
-    public List<Customer> getAllCustomer(){
+    public List<Customer> getAllCustomer() {
         List<Customer> customerList = new ArrayList<>();
         String query = "select * from Customer";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 customerList.add(
                         new Customer(
-                            resultSet.getInt(1),
-                            resultSet.getString(2),
-                            resultSet.getString(3),
-                            resultSet.getString(4)
+                                resultSet.getInt(1),
+                                resultSet.getString(2),
+                                resultSet.getString(3),
+                                resultSet.getString(4)
                         )
                 );
 
@@ -38,7 +38,6 @@ public class AddOrderForCustomerDAO {
         }
         return customerList;
     }
-
 
 
 }

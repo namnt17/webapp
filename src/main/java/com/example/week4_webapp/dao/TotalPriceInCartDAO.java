@@ -14,17 +14,17 @@ public class TotalPriceInCartDAO {
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 
-    public double getTotalCartPrice(ArrayList<Cart> cartList){
+    public double getTotalCartPrice(ArrayList<Cart> cartList) {
         double sum = 0;
         String query = "Select price from Mobile where id = ?";
         try {
-            if(cartList.size() > 0){
-                for(Cart items:cartList){
+            if (cartList.size() > 0) {
+                for (Cart items : cartList) {
                     connection = new DBContext().getConnection();
-                    preparedStatement  = connection.prepareStatement(query);
-                    preparedStatement.setInt(1,items.getId());
+                    preparedStatement = connection.prepareStatement(query);
+                    preparedStatement.setInt(1, items.getId());
                     resultSet = preparedStatement.executeQuery();
-                    while (resultSet.next()){
+                    while (resultSet.next()) {
                         sum += resultSet.getDouble("price") * items.getQuantity();
                     }
                 }
@@ -32,6 +32,6 @@ public class TotalPriceInCartDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return Math.round(sum*100) / 100.0;
+        return Math.round(sum * 100) / 100.0;
     }
 }

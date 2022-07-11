@@ -18,7 +18,7 @@ public class AddToCartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        try(PrintWriter out=  resp.getWriter()) {
+        try (PrintWriter out = resp.getWriter()) {
             ArrayList<Cart> cartList = new ArrayList<>();
             int pid = Integer.parseInt(req.getParameter("pid"));
             Cart cart = new Cart();
@@ -30,7 +30,7 @@ public class AddToCartController extends HttpServlet {
             if (cart_list == null) {
                 cartList.add(cart);
                 session.setAttribute("cart_list", cartList);
-                resp.sendRedirect("getAllMobile?id="+id);
+                resp.sendRedirect("getAllMobile?id=" + id);
             } else {
                 cartList = cart_list;
                 boolean exits = false;
@@ -42,7 +42,7 @@ public class AddToCartController extends HttpServlet {
                 }
                 if (!exits) {
                     cartList.add(cart);
-                    resp.sendRedirect("getAllMobile?id="+id);
+                    resp.sendRedirect("getAllMobile?id=" + id);
                 }
             }
         }

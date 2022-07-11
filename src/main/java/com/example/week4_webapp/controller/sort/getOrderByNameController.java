@@ -17,8 +17,8 @@ public class getOrderByNameController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         SortDAO sortDAO = new SortDAO();
         List<OrderCustomer> sortByName = sortDAO.getBillByName();
-        req.setAttribute("sortByName",sortByName);
-        req.getRequestDispatcher("sortByName.jsp").forward(req,resp);
+        req.setAttribute("sortByName", sortByName);
+        req.getRequestDispatcher("sortByName.jsp").forward(req, resp);
 
     }
 }

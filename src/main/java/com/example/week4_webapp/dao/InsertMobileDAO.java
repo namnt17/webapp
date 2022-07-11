@@ -12,14 +12,14 @@ public class InsertMobileDAO {
     Connection con;
     PreparedStatement statement;
 
-    public void addNewMobile(Mobile mobile){
+    public void addNewMobile(Mobile mobile) {
         String query = "insert into Mobile values(?,?,?)";
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
-            statement.setString(1,mobile.getBrand());
-            statement.setString(2,mobile.getModel());
-            statement.setDouble(3,mobile.getPrice());
+            statement.setString(1, mobile.getBrand());
+            statement.setString(2, mobile.getModel());
+            statement.setDouble(3, mobile.getPrice());
             statement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

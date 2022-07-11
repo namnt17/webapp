@@ -16,8 +16,8 @@ public class getOrderByAmountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         SortDAO amountDAO = new SortDAO();
-        List<OrderCustomer>listSortByAmount =  amountDAO.getBillByAmount();
-        req.setAttribute("sortByAmount",listSortByAmount);
-        req.getRequestDispatcher("sortByAmount.jsp").forward(req,resp);
+        List<OrderCustomer> listSortByAmount = amountDAO.getBillByAmount();
+        req.setAttribute("sortByAmount", listSortByAmount);
+        req.getRequestDispatcher("sortByAmount.jsp").forward(req, resp);
     }
 }

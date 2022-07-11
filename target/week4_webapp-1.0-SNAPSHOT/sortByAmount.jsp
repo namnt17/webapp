@@ -4,15 +4,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <title>Sort By Amount</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+            crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
 
@@ -30,7 +31,7 @@
                         Sort By Amount Products In Cart
                     </div>
                     <div class="card-body">
-                        <table  class="table table-striped">
+                        <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th>ID Bill</th>
@@ -49,7 +50,9 @@
                                     <td>${c.address}</td>
                                     <td>${c.group}</td>
                                     <td>${c.quantity}</td>
-                                    <td><a href=""><button class="btn btn-warning">Chi Tiết</button></a></td>
+                                    <td><a href="">
+                                        <button class="btn btn-warning">Chi Tiết</button>
+                                    </a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

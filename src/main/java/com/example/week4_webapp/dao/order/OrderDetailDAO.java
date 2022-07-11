@@ -12,17 +12,17 @@ public class OrderDetailDAO {
     PreparedStatement statement;
     ResultSet resultSet;
 
-    public boolean insertOrder(OrdersDetail model){
+    public boolean insertOrder(OrdersDetail model) {
         boolean result = false;
-        String query  = "insert into Orders(p_id,u_id,o_quantity,b_id) values(?,?,?,?)";
+        String query = "insert into Orders(p_id,u_id,o_quantity,b_id) values(?,?,?,?)";
 
         try {
             con = new DBContext().getConnection();
             statement = con.prepareStatement(query);
-            statement.setInt(1,model.getId());
-            statement.setInt(2,model.getUid());
-            statement.setInt(3,model.getQuantity());
-            statement.setInt(4,model.getBid());
+            statement.setInt(1, model.getId());
+            statement.setInt(2, model.getUid());
+            statement.setInt(3, model.getQuantity());
+            statement.setInt(4, model.getBid());
             statement.executeUpdate();
             result = true;
         } catch (Exception e) {

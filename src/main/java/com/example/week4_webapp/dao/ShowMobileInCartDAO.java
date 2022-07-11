@@ -13,17 +13,18 @@ public class ShowMobileInCartDAO {
     Connection con;
     PreparedStatement statement;
     ResultSet resultSet;
-    public List<Cart> getCartProducts(ArrayList<Cart> cartList){
+
+    public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
         List<Cart> products = new ArrayList<>();
         try {
-            if(cartList.size() > 0){
-                for(Cart items: cartList){
+            if (cartList.size() > 0) {
+                for (Cart items : cartList) {
                     con = new DBContext().getConnection();
-                    String query =  "select * from Mobile where id = ?";
+                    String query = "select * from Mobile where id = ?";
                     statement = con.prepareStatement(query);
-                    statement.setInt(1,items.getId());
+                    statement.setInt(1, items.getId());
                     resultSet = statement.executeQuery();
-                    while (resultSet.next()){
+                    while (resultSet.next()) {
                         Cart cart = new Cart();
                         cart.setId(resultSet.getInt("id"));
                         cart.setBrand(resultSet.getString("brand"));
